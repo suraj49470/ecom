@@ -31,6 +31,7 @@ class App extends Component {
                        
                       //initialize main conponent's(App) state
                       this.state = {};
+                    
 
            }
      componentDidMount(){
