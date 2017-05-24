@@ -46,9 +46,9 @@ class App extends Component {
                 <div>
                        <Header />
                        <Route exact path="/" component={() => (<Home trending-data={this.state.trending} />)} />
-                      <Route path="/men" component={() => (<Men trending-data={this.state.men} />)} />
-                      <Route path="/women" component={() => (<Women trending-data={this.state.women} />)} />
-                      <Route path="/mobile" component={() => (<Mobile trending-data={this.state.mobile} />)} />
+                      <Route path="/men" component={() => (<Men men-data={this.state.men} />)} />
+                      <Route path="/women" component={() => (<Women women-data={this.state.women} />)} />
+                      <Route path="/mobile" component={() => (<Mobile mobile-data={this.state.mobile} />)} />
                       <Route path="/user/:id" component={User} /> 
                 </div>
           </Router>
