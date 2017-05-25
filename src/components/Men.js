@@ -1,13 +1,22 @@
 import React from 'react';
+import firebase from '.././firebase';
 import {ProductLayout} from './ProductLayout';
-
+import loadjson from './loader';
 export class Men extends React.Component{
      constructor(props){
 	       super(props);
-	       console.log(this.props);
-           this.state = {
-                 
-           }	      
+         this.state = {
+      "men" : loadjson
+     };
+    }
+
+     componentWillMount(){
+             this.setState({"men":loadjson});
+     }
+     componentDidMount(){
+             firebase.database().ref('men').on('value',(men) => {
+               this.setState({"men":men.val()});
+           });
      }
 
            render(){
@@ -17,9 +26,8 @@ export class Men extends React.Component{
 
                                  <div className="container">
                                      <div className="row">
-                                        <ProductLayout />
-                                        <ProductLayout />
-                                        <ProductLayout />
+                                     
+                                   {this.state.men.map((men,index) =>  <ProductLayout key={index} productdata={men} /> )}
                                      </div>
                                  </div>
                       	);
