@@ -13,3 +13,14 @@ body {
 	
     padding-bottom: 5px;
 }
+.top-nav{
+background:#d9534f;
+border-color:#d9534f;
+}
+
+.top-nav li > a{
+	color: white !important;
+}
+.top-nav-head{
+	color: white !important;
+}
