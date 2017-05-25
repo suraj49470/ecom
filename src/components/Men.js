@@ -6,17 +6,19 @@ export class Men extends React.Component{
      constructor(props){
 	       super(props);
          this.state = {
-      "men" : loadjson
+      "men" : loadjson,
+      "addToCartClassProduct" : "hide"
      };
     }
 
      componentWillMount(){
-             this.setState({"men":loadjson});
+             this.setState({"men":loadjson,"addToCartClassProduct" : "hide"});
      }
      componentDidMount(){
              firebase.database().ref('men').on('value',(men) => {
-               this.setState({"men":men.val()});
+               this.setState({"men":men.val(),"addToCartClassProduct" : "show"});
            });
+
      }
 
            render(){
@@ -27,7 +29,7 @@ export class Men extends React.Component{
                                  <div className="container">
                                      <div className="row">
                                      
-                                   {this.state.men.map((men,index) =>  <ProductLayout key={index} productdata={men} /> )}
+                                   {this.state.men.map((men,index) =>  <ProductLayout key={index} addToCartClass={this.state.addToCartClassProduct} productdata={men} />)}
                                      </div>
                                  </div>
                       	);

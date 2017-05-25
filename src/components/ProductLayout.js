@@ -2,11 +2,17 @@ import React from 'react';
 
 
 export class ProductLayout extends React.Component{
-   
+                constructor(props){
+                    super(props);
+        
+                }
+
+
 
 
     render(){
-
+  
+   console.log(this.props);
          return(
 
               <div className="col-lg-4 col-md-4 col-xs-12 col-sm-12">
@@ -17,7 +23,7 @@ export class ProductLayout extends React.Component{
                                      <div className="P_footer text text-center">
                                                  <p className="text-danger">{this.props.productdata.product_name}</p>
                                                  <p className="text-danger">{this.props.productdata.product_price}</p>
-                                                 <button className="btn btn-danger">Add to Cart</button>
+                                                  <button className={`btn btn-danger ${this.props.addToCartClass}`}>Add to Cart</button>                                    
                                       </div>
 
                         </div>
