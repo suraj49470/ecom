@@ -7,17 +7,18 @@ export class Mobile extends React.Component{
     constructor(props){
          super(props);
          this.state = {
-      "mobile" : loadjson
+      "mobile" : loadjson,
+      "addToCartClassProduct" : "hide"
      };
    }
 
    componentWillMount(){
-             this.setState({"mobile":loadjson});
+             this.setState({"mobile":loadjson,"addToCartClassProduct" : "hide"});
      }
    componentDidMount(){
 
       firebase.database().ref('mobile').on('value',(mobile) => {
-           this.setState({"mobile":mobile.val()});
+           this.setState({"mobile":mobile.val(),"addToCartClassProduct" : "show"});
       });
   
      }
@@ -30,7 +31,7 @@ export class Mobile extends React.Component{
                                  <div className="container">
                                      <div className="row">
                                      
-                                   {this.state.mobile.map((mobile,index) =>  <ProductLayout key={index} productdata={mobile} /> )}
+                                   {this.state.mobile.map((mobile,index) =>  <ProductLayout key={index} addToCartClass={this.state.addToCartClassProduct} productdata={mobile} /> )}
                                      </div>
                                  </div>
                       	);

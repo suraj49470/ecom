@@ -7,17 +7,18 @@ export class Home extends React.Component{
   constructor(props){
 	       super(props);
          this.state = {
-      "trend" : loadjson
+      "trend" : loadjson,
+      "addToCartClassProduct" : "hide"
      };
     }
 
   componentWillMount(){
-             this.setState({"trend":loadjson});
+             this.setState({"trend":loadjson,"addToCartClassProduct" : "hide"});
      }
    componentDidMount(){
 
       firebase.database().ref('trending').on('value',(trend) => {
-           this.setState({"trend":trend.val()});
+           this.setState({"trend":trend.val(),"addToCartClassProduct" : "show"});
       });
   
      }
@@ -26,7 +27,7 @@ export class Home extends React.Component{
                 <div className="container">
                      <div className="row">
                      
-                   {this.state.trend.map((trend,index) =>  <ProductLayout key={index} productdata={trend} /> )}
+                   {this.state.trend.map((trend,index) =>  <ProductLayout key={index} addToCartClass={this.state.addToCartClassProduct} productdata={trend} /> )}
                      </div>
                  </div>         
                     );

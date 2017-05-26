@@ -14,8 +14,8 @@ body {
     padding-bottom: 5px;
 }
 .top-nav{
-background:#d9534f;
-border-color:#d9534f;
+background:#02B19A;
+border-color:#02B19A;
 }
 
 .top-nav li > a{
@@ -26,4 +26,15 @@ border-color:#d9534f;
 }
 .P_footer {
   text-align: -webkit-center;
+}
+.text-color{
+  color: #02B19A;
+}
+.text-color-back{
+  background:  #02B19A ;
+  border-color: #02B19A ;
+}
+.text-color-back:hover,.text-color-back:active,.text-color-back:focus,.text-color-back:active:focus{
+  background:  #02B19A ;
+  border-color: #02B19A ;
 }

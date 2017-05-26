@@ -21,9 +21,9 @@ export class ProductLayout extends React.Component{
                                                 <img src={this.props.productdata.product_image} className="img img-responsive"></img>
                                  </div>
                                      <div className="P_footer text text-center">
-                                                 <p className="text-danger">{this.props.productdata.product_name}</p>
-                                                 <p className="text-danger">{this.props.productdata.product_price}</p>
-                                                  <button className={`btn btn-danger ${this.props.addToCartClass}`}>Add to Cart</button>                                    
+                                                 <p className="text-color text-uppercase">{this.props.productdata.product_name}</p>
+                                                 <p className="text-color text-uppercase">{this.props.productdata.product_price}</p>
+                                                  <button className={`btn btn-danger text-uppercase text-color-back  ${this.props.addToCartClass}`}>Add to Cart</button>                                    
                                       </div>
 
                         </div>
