@@ -15,7 +15,7 @@ export class Header extends React.Component{
                             <nav className="navbar navbar-inverse navbar-fixed-top top-nav">
 							  <div className="container-fluid">
 							    <div className="navbar-header">
-							      <Link className="navbar-brand text-uppercase top-nav-head" to="/">Ecom</Link>
+							      <Link className="navbar-brand text-uppercase top-nav-head" to="/"><span className="glyphicon glyphicon-shopping-cart"></span></Link>
 							    </div>
 							    <ul className="nav navbar-nav top-nav">
 							      <li><Link className="text-uppercase" to="/men">men</Link></li>
